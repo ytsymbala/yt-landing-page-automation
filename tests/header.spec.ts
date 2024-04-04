@@ -32,5 +32,5 @@ test('User logo was changed on hover mouse button', async ({ page }) => {
 
 test('Check the user menu items when navigate on user icon', async({ page }) => {
     const pageHeader = new PageHeader(page);
-    await pageHeader.checkUserMenuItems();
+    await pageHeader.userInfoItemsDisplayedAndLinksWorks();
 })
