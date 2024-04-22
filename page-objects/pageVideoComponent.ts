@@ -20,17 +20,17 @@ export class PageVideoComponent {
         this.muteButton = page.locator('.hero__but__mute');
         this.fullscreenButton = page.locator('#video__buts').getByRole('button').nth(1);
         this.bannerText = page.locator('.baner__text p');
-        this.heroInfo = page.locator('.hero__info')
+        this.heroInfo = page.locator('.hero__info');
         this.buttonTryNow = page.locator('#hero__video').getByRole('button', { name: 'TRY NOW' });
 
     }
 
     async showVideoComponent(){
-        await expect(this.videoComponent).toBeVisible()
+        await expect(this.videoComponent).toBeVisible();
     }
 
     async showUsedVideo(){
-        const videoSrc = await this.videoComponent.getAttribute('src')
+        const videoSrc = await this.videoComponent.getAttribute('src');
         expect(videoSrc).toContain(expectedVideoSrc);
     }
 
@@ -40,8 +40,8 @@ export class PageVideoComponent {
     }
 
     async showDefaultVideoState(){
-        const hasMuteAttribute = await this.videoComponent.getAttribute('muted')
-        await expect(hasMuteAttribute).toBe('true')
+        const hasMuteAttribute = await this.videoComponent.getAttribute('muted');
+        await expect(hasMuteAttribute).toBe('true');
     }
 
     async clickMuteUnmuteButton(){
@@ -64,13 +64,13 @@ export class PageVideoComponent {
     }
 
     async showHeroBannerTitle(){
-        const getBannerText = await this.bannerText.allTextContents()
-        expect(getBannerText).toEqual(expectedHeroText)
+        const getBannerText = await this.bannerText.allTextContents();
+        expect(getBannerText).toEqual(expectedHeroText);
     }
 
     async showHeroInfoText(){
-        const getHeroInfo = await this.heroInfo.textContent()
-        expect(getHeroInfo).toContain(expectedHeroInfo)
+        const getHeroInfo = await this.heroInfo.textContent();
+        expect(getHeroInfo).toContain(expectedHeroInfo);
     }
 
     async showTryNowButton(){

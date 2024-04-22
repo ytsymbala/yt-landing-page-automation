@@ -15,7 +15,7 @@ export class PageHeader {
         this.headerComponent = page.locator('header');
         this.siteLogo = page.locator('img[alt="StartEx"]').first();
         this.userLogoImg = page.getByRole('img', { name: 'UserLogo' });
-        this.userIcon = page.locator('.user__icon')
+        this.userIcon = page.locator('.user__icon');
 
     }
 
