@@ -3,7 +3,7 @@
 import { Page, expect } from '@playwright/test';
 
 export async function checkLinkAndUrl(page: Page, linkText: string, expectedUrl: string, locator: string) {
-    await page.evaluate(() => window.scrollTo(0, 0));
+    //await page.evaluate(() => window.scrollTo(0, 0));
     const element = await page.locator(`${locator}:has-text("${linkText}")`).first();
     if (!element) {
         console.error(`Element with text "${linkText}" not found!`);
