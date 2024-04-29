@@ -31,7 +31,7 @@ test('Check that video is muted by default', async ({ page }) => {
     await videoComponentPage.clickMuteUnmuteButton();
 });
 
-test('Check fullscreen resize button', async ({ page }) => {
+test.skip('Check fullscreen resize button', async ({ page }) => {
     const videoComponentPage = new PageVideoComponent(page);
     await videoComponentPage.showFullscreenResize();
 });

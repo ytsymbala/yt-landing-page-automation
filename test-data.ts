@@ -20,4 +20,11 @@ export const hoveredSrc = 'images/user1.svg'
 
 export const expectedVideoSrc = 'video/315536202_1280.mp4';
 export const expectedHeroText = ['There is no other', 'platforms for you as like'];
-export const expectedHeroInfo = '* No neds to add cards details *'
+export const expectedHeroInfo = '* No neds to add cards details *';
+
+export const expectedRubricText = 'NEW DESIGN';
+export const expectedHeadingText = 'There is no other platforms for you as like';
+export const expectedContentLink = '....';
+export const expectedFirstDescription = 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.';
+export const expectedSecondDescription = 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.';
+
