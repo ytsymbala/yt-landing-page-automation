@@ -1,4 +1,5 @@
-import { expect, test } from '@playwright/test';
+import { test } from '@playwright/test';
+import { PageSection1 } from '../page-objects/pageSection1'
 
 test.beforeEach(async ({ page }) => {
     await page.goto('/');
@@ -13,36 +14,31 @@ test.beforeEach(async ({ page }) => {
   });
 
 test('Check section1 component presence', async({ page }) => {
-    const section1Component = page.locator('.section1')
-    await expect(section1Component).toBeVisible()
+    const PageSection1Component = new PageSection1(page);
+    await PageSection1Component.showSection1Component();
 })
 
 test('Check section1 content rubric text', async({ page }) => {
-    const section1Rubric = await page.getByRole('heading', { name: 'NEW DESIGN' }).textContent()
-    const expectedRubricText = 'NEW DESIGN'
-    expect(section1Rubric).toContain(expectedRubricText)
+    const PageSection1Component = new PageSection1(page);
+    await PageSection1Component.showSection1RubricText();
 })
 
 test('Check section1 header text', async({ page }) => {
-    const section1Heading = await page.getByRole('heading', { name: 'There is no other platforms for you as like ....' }).textContent()
-    const expectedHeadingText = 'There is no other platforms for you as like'
-    expect(section1Heading).toContain(expectedHeadingText)
+    const PageSection1Component = new PageSection1(page);
+    await PageSection1Component.showSection1HeaderText();
 })
 
 test('Check section1 content link', async({ page }) => {
-    const section1ContentLink = await page.locator('.content__link').first().textContent()
-    const expectedContentLink = '....'
-    expect(section1ContentLink).toContain(expectedContentLink)
+    const PageSection1Component = new PageSection1(page);
+    await PageSection1Component.showSection1ContentLink();
 })
 
 test('Check section1 first description', async({ page }) => {
-    const section1FirstDescriptions = await page.locator('.section1 .container p').first().textContent();
-    const expectedFirstDescription = 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.'
-    expect(section1FirstDescriptions).toContain(expectedFirstDescription);
+    const PageSection1Component = new PageSection1(page);
+    await PageSection1Component.showSection1FirstDescription();
 });
 
 test('Check section1 second description', async({ page }) => {
-    const section1SecondDescriptions = await page.locator('.section1 .container p').nth(1).textContent();
-    const expectedSecondDescription = 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.'
-    expect(section1SecondDescriptions).toContain(expectedSecondDescription);
+    const PageSection1Component = new PageSection1(page);
+    await PageSection1Component.showSection1SecondDescription();
 });
