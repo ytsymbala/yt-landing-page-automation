@@ -23,14 +23,14 @@ test('Header tabs are present and links work', async ({ page }) => {
 test('User logo is displayed with correct image in default state', async ({ page }) => {
     const pageHeader = new PageHeader(page);
     await pageHeader.showDefaultUserLogoWithCorrectImage();
-})
+});
 
 test('User logo was changed on hover mouse button', async ({ page }) => {
     const pageHeader = new PageHeader(page);
     await pageHeader.showUserLogoOnHover();
-})
+});
 
 test('Check the user menu items when navigate on user icon', async({ page }) => {
     const pageHeader = new PageHeader(page);
     await pageHeader.userInfoItemsDisplayedAndLinksWorks();
-})
+});
