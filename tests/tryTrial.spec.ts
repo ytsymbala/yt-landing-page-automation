@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker';
 import { expect, test } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
@@ -42,11 +43,43 @@ test('Check Try Trial text for Terms & Services.', async({ page }) => {
 })
 
 test('Check Trial Form elements', async({ page }) => {
-    const formElements = await page.$$('.try__input');
+    const formElements = await page.locator('.contact__ul .try__input').all();
     const formSubmitButton = page.locator('.try__button');
     expect(formElements).toHaveLength(3);
     expect(formSubmitButton).not.toBeNull();
 });
+
+test('Check mandatory fields for Try Trial form', async({ page }) => {
+    const formInputElements = await page.locator('.contact__ul .try__input').all();
+    
+    for (const inputElement of formInputElements) {
+        const isRequired = await inputElement.getAttribute('required') !== null
+        expect(isRequired).toBe(true);
+    }
+})
+
+test('Check Terms & Services link and title', async({ page }) => {
+    const termsAndServiceLink = await page.getByRole('link', { name: 'Terms & Services.' }).textContent();
+    await page.getByRole('link', { name: 'Terms & Services.' }).click()
+    expect(page.url()).toMatch(/#/);
+    const expectedTermsAndServiceLinkTitle = 'Terms & Services.'
+    expect(termsAndServiceLink).toContain(expectedTermsAndServiceLinkTitle);
+})
+
+test('Check try Now Form', async({ page }) => {
+    const randomFullName = faker.person.fullName()
+    const randomEmail = `${randomFullName.replace(' ', '')}${faker.number.int(1000)}@test.com`
+    const randomPassword = faker.internet.password()
+
+    const tryTrialComponent = page.locator('#trial');
+    await tryTrialComponent.getByPlaceholder('FULL NAME').fill(randomFullName);
+    await tryTrialComponent.getByPlaceholder('YOUR EMAIL').fill(randomEmail);
+    await tryTrialComponent.getByPlaceholder('PASSWORD').fill(randomPassword);
+    await tryTrialComponent.getByRole('button', { name: 'TRY NOW' }).click()
+});
+
+
+
 
 
 
