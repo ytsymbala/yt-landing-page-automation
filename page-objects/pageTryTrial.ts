@@ -1,6 +1,5 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { faker } from '@faker-js/faker';
-import { expectedContentLink, expectedFirstDescription, expectedHeadingText, expectedRubricText, expectedSecondDescription } from '../test-data';
+import { expectedTermsAndServiceLinkTitle, expectedTryTextButtonInfo, expectedTryTextForAgreements, expectedTryTrialHeadingText, expectedTryTrialRubricText } from '../test-data';
 
 export class PageTryTrial {
     readonly page: Page;
@@ -33,25 +32,21 @@ export class PageTryTrial {
 
     async showTryTrialRubric() {
         const getTryTrialRubricText = await this.tryTrialRubric.textContent();
-        const expectedTryTrialRubricText = 'NEW FEATURES';
         expect(getTryTrialRubricText).toContain(expectedTryTrialRubricText);
     }
 
     async showTryTrialHeading() {
         const getTryTrialHeading = await this.tryTrialHeading.textContent();
-        const expectedTryTrialHeadingText = 'Over 100000 designers are using';
         expect(getTryTrialHeading).toContain(expectedTryTrialHeadingText);
     }
     
     async showTryTrialButtonTextHelper() {
         const getTryTextButtonInfo = await this.tryTextButtonInfo.textContent();
-        const expectedTryTextButtonInfo = '30 days free trial for all.';
         expect(getTryTextButtonInfo).toContain(expectedTryTextButtonInfo);
     }
 
     async showTryTextForAgreements() {
         const getTryTextForAgreements = await this.tryTextForAgreements.textContent()
-        const expectedTryTextForAgreements = 'By Signing up you agree to our ';
         expect(getTryTextForAgreements).toContain(expectedTryTextForAgreements);
     }
 
@@ -74,19 +69,14 @@ export class PageTryTrial {
         const getTermsAndServiceLink = await this.termsAndServiceLink.textContent()
         await this.termsAndServiceLink.click()
         expect(this.page.url()).toMatch(/#/);
-        const expectedTermsAndServiceLinkTitle = 'Terms & Services.'
         expect(getTermsAndServiceLink).toContain(expectedTermsAndServiceLinkTitle);
     }
 
-    async fillAndSubmitTryTrialForm() {
-        const randomFullName = faker.person.fullName()
-        const randomEmail = `${randomFullName.replace(/ /g, '')}${faker.number.int(1000)}@test.com`;
-        const randomPassword = faker.internet.password()
-
-        await this.tryTrialComponent.getByPlaceholder('FULL NAME').fill(randomFullName);
-        await this.tryTrialComponent.getByPlaceholder('YOUR EMAIL').fill(randomEmail);
-        await this.tryTrialComponent.getByPlaceholder('PASSWORD').fill(randomPassword);
-        //await this.tryTrialComponent.getByRole('button', { name: 'TRY NOW' }).click()
+    async fillAndSubmitTryTrialForm(fullName: string, email: string, password: string) {
+        await this.tryTrialComponent.getByPlaceholder('FULL NAME').fill(fullName);
+        await this.tryTrialComponent.getByPlaceholder('YOUR EMAIL').fill(email);
+        await this.tryTrialComponent.getByPlaceholder('PASSWORD').fill(password);
+        await this.tryTrialComponent.getByRole('button', { name: 'TRY NOW' }).click()
     }
 
 }

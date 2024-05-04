@@ -1,4 +1,4 @@
-//import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import { test } from '@playwright/test';
 import { PageTryTrial } from '../page-objects/pageTryTrial'
 
@@ -56,7 +56,12 @@ test('Check Terms & Services link and title', async({ page }) => {
 
 test('Check try Now Form', async({ page }) => {
     const tryTrial = new PageTryTrial(page);
-    await tryTrial.fillAndSubmitTryTrialForm();
+
+    const randomFullName = faker.person.fullName()
+    const randomEmail = `${randomFullName.replace(/ /g, '')}${faker.number.int(1000)}@test.com`;
+    const randomPassword = faker.internet.password()
+
+    await tryTrial.fillAndSubmitTryTrialForm(randomFullName, randomEmail, randomPassword);
 });
 
 
