@@ -54,3 +54,9 @@ export const expectedBlocks = [
     }
 ];
 
+export const expectedSection2RubricText = 'NEW DESIGN';
+export const expectedSection2HeadingText = 'Resposive design, just need your tap';
+export const expectedSection2ContentLink = '....';
+export const expectedSection2ContentText = 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn. Vestibulum felis euismod semper.';
+export const expectedSection2ImageSrc = 'images/macbook.png';
+

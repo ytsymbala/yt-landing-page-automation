@@ -21,11 +21,13 @@ export class PageBannerNews {
     }
 
     async showBannerNewsRubricText() {
+        await expect(this.bannerNewsRubricText).toBeVisible()
         const getBannerNewsRubricText = await this.bannerNewsRubricText.textContent();
         expect(getBannerNewsRubricText).toContain(expectedBannerNewsRubricText);
     }
 
     async showBannerNewsHeadingText() {
+        await expect(this.bannerNewsHeadingText).toBeVisible()
         const getBannerNewsHeadingText = await this.bannerNewsHeadingText.textContent();
         expect(getBannerNewsHeadingText).toContain(expectedBannerNewsHeadigText);
     }
@@ -40,6 +42,10 @@ export class PageBannerNews {
             const imageElement = block.locator('img');
             const titleElement = block.locator('.content__subheading');
             const textElement = block.locator('.content__text');
+
+            for (const element of [imageElement, titleElement, textElement]) {
+                await expect(element).toBeVisible();
+            }
             
             const imageSrc = await imageElement.getAttribute('src');
             const titleText = await titleElement.textContent();
@@ -50,8 +56,6 @@ export class PageBannerNews {
             expect(textContent).toContain(expectedBlock.description);
         }
     }
-
-
-
     
 }
+
