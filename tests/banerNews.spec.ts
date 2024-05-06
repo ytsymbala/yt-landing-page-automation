@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { test } from '@playwright/test';
 import { PageBannerNews } from '../page-objects/pageBanerNews';
 
 test.beforeEach(async ({ page }) => {
@@ -30,7 +30,7 @@ test('Check baner news heading text', async({ page }) => {
 
 test('Check news section content', async ({ page }) => {
     const bannerNews = new PageBannerNews(page);
-    await bannerNews.showNewsSection()
+    await bannerNews.showNewsSection();
 });
 
 

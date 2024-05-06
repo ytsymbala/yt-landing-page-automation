@@ -34,3 +34,23 @@ export const expectedTryTextButtonInfo = '30 days free trial for all.';
 export const expectedTryTextForAgreements = 'By Signing up you agree to our ';
 export const expectedTermsAndServiceLinkTitle = 'Terms & Services.';
 
+export const expectedBannerNewsRubricText = 'NEW FEATURES';
+export const expectedBannerNewsHeadigText = 'Some awesone features';
+export const expectedBlocks = [
+    {
+        image: 'images/baner-icon1.svg',
+        title: 'Some awesone features',
+        description: 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.'
+    },
+    {
+        image: 'images/baner-icon2.svg',
+        title: 'Some awesone features',
+        description: 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.'
+    },
+    {
+        image: 'images/baner-icon3.svg',
+        title: 'Some awesone features',
+        description: 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.'
+    }
+];
+
