@@ -1,7 +1,7 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { expectedBannerNewsHeadigText, expectedBannerNewsRubricText, expectedBlocks } from '../test-data';
 
-export class PageBannerNews {
+export class PageSection2 {
     readonly page: Page;
     readonly section2Component: Locator;
     readonly section2RubricText: Locator;
@@ -20,7 +20,7 @@ export class PageBannerNews {
         this.section2ImageSrc = page.getByRole('img', { name: 'Macbook' });
     }
 
-    async showBannerNewsComponent() {
+    async showSection2Component() {
         await expect(this.section2Component).toBeVisible();
     }
 
