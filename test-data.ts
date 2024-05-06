@@ -28,3 +28,29 @@ export const expectedContentLink = '....';
 export const expectedFirstDescription = 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.';
 export const expectedSecondDescription = 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.';
 
+export const expectedTryTrialRubricText = 'NEW FEATURES';
+export const expectedTryTrialHeadingText = 'Over 100000 designers are using';
+export const expectedTryTextButtonInfo = '30 days free trial for all.';
+export const expectedTryTextForAgreements = 'By Signing up you agree to our ';
+export const expectedTermsAndServiceLinkTitle = 'Terms & Services.';
+
+export const expectedBannerNewsRubricText = 'NEW FEATURES';
+export const expectedBannerNewsHeadigText = 'Some awesone features';
+export const expectedBlocks = [
+    {
+        image: 'images/baner-icon1.svg',
+        title: 'Some awesone features',
+        description: 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.'
+    },
+    {
+        image: 'images/baner-icon2.svg',
+        title: 'Some awesone features',
+        description: 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.'
+    },
+    {
+        image: 'images/baner-icon3.svg',
+        title: 'Some awesone features',
+        description: 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.'
+    }
+];
+

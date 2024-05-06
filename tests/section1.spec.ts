@@ -14,31 +14,31 @@ test.beforeEach(async ({ page }) => {
   });
 
 test('Check section1 component presence', async({ page }) => {
-    const PageSection1Component = new PageSection1(page);
-    await PageSection1Component.showSection1Component();
+    const pageSection1 = new PageSection1(page);
+    await pageSection1.showSection1Component();
 })
 
 test('Check section1 content rubric text', async({ page }) => {
-    const PageSection1Component = new PageSection1(page);
-    await PageSection1Component.showSection1RubricText();
+    const pageSection1 = new PageSection1(page);
+    await pageSection1.showSection1RubricText();
 })
 
 test('Check section1 header text', async({ page }) => {
-    const PageSection1Component = new PageSection1(page);
-    await PageSection1Component.showSection1HeaderText();
+    const pageSection1 = new PageSection1(page);
+    await pageSection1.showSection1HeaderText();
 })
 
 test('Check section1 content link', async({ page }) => {
-    const PageSection1Component = new PageSection1(page);
-    await PageSection1Component.showSection1ContentLink();
+    const pageSection1 = new PageSection1(page);
+    await pageSection1.showSection1ContentLink();
 })
 
 test('Check section1 first description', async({ page }) => {
-    const PageSection1Component = new PageSection1(page);
-    await PageSection1Component.showSection1FirstDescription();
+    const pageSection1 = new PageSection1(page);
+    await pageSection1.showSection1FirstDescription();
 });
 
 test('Check section1 second description', async({ page }) => {
-    const PageSection1Component = new PageSection1(page);
-    await PageSection1Component.showSection1SecondDescription();
+    const pageSection1 = new PageSection1(page);
+    await pageSection1.showSection1SecondDescription();
 });

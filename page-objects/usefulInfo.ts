@@ -227,3 +227,167 @@
 //     expect(section1SecondDescriptions).toContain(expectedSecondDescription);
 // });
 
+// import { faker } from '@faker-js/faker';
+// import { expect, test } from '@playwright/test';
+
+// test.beforeEach(async ({ page }) => {
+//     await page.goto('/');
+//     await page.evaluate(() => {
+//         const sectionTry = document.querySelector('.try');
+//         if (sectionTry) {
+//             sectionTry.scrollIntoView();
+//             return true; // return something to indicate success
+//         }
+//         return false; // return something to indicate failure
+//     });
+//   });
+
+// test('Check Try Trial component presence', async({ page }) => {
+//     const tryTrialComponent = page.locator('#trial');
+//     await expect(tryTrialComponent).toBeVisible();
+// });
+
+// test('Check Try Trial rubric text', async({ page }) => {
+//     const tryTrialRubric = await page.locator('#trial').getByText('NEW FEATURES').textContent();
+//     const expectedTryTrialRubricText = 'NEW FEATURES';
+//     expect(tryTrialRubric).toContain(expectedTryTrialRubricText);
+// })
+
+// test('Check Try Trial Heading text', async({ page }) => {
+//     const tryTrialHeading = await page.locator('.try__heading').textContent();
+//     const expectedTryTrialHeadingText = 'Over 100000 designers are using';
+//     expect(tryTrialHeading).toContain(expectedTryTrialHeadingText);
+// });
+
+// test('Check Try Trial text helper for button', async({ page }) => {
+//     const tryTextButtonInfo = await page.locator('.try__text').first().textContent()
+//     const expectedTryTextButtonInfo = '30 days free trial for all.';
+//     expect(tryTextButtonInfo).toContain(expectedTryTextButtonInfo);
+// })
+
+// test('Check Try Trial text for Terms & Services.', async({ page }) => {
+//     const tryTextForAgreements = await page.locator('.try__text').nth(1).textContent()
+//     const expectedTryTextForAgreements = 'By Signing up you agree to our ';
+//     expect(tryTextForAgreements).toContain(expectedTryTextForAgreements);
+// })
+
+// test('Check Trial Form elements', async({ page }) => {
+//     const formElements = await page.locator('.contact__ul .try__input').all();
+//     const formSubmitButton = page.locator('.try__button');
+//     expect(formElements).toHaveLength(3);
+//     expect(formSubmitButton).not.toBeNull();
+// });
+
+// test('Check mandatory fields for Try Trial form', async({ page }) => {
+//     const formInputElements = await page.locator('.contact__ul .try__input').all();
+    
+//     for (const inputElement of formInputElements) {
+//         const isRequired = await inputElement.getAttribute('required') !== null
+//         expect(isRequired).toBe(true);
+//     }
+// })
+
+// test('Check Terms & Services link and title', async({ page }) => {
+//     const termsAndServiceLink = await page.getByRole('link', { name: 'Terms & Services.' }).textContent();
+//     await page.getByRole('link', { name: 'Terms & Services.' }).click()
+//     expect(page.url()).toMatch(/#/);
+//     const expectedTermsAndServiceLinkTitle = 'Terms & Services.'
+//     expect(termsAndServiceLink).toContain(expectedTermsAndServiceLinkTitle);
+// })
+
+// test('Check try Now Form', async({ page }) => {
+//     const randomFullName = faker.person.fullName()
+//     const randomEmail = `${randomFullName.replace(' ', '')}${faker.number.int(1000)}@test.com`
+//     const randomPassword = faker.internet.password()
+
+//     const tryTrialComponent = page.locator('#trial');
+//     await tryTrialComponent.getByPlaceholder('FULL NAME').fill(randomFullName);
+//     await tryTrialComponent.getByPlaceholder('YOUR EMAIL').fill(randomEmail);
+//     await tryTrialComponent.getByPlaceholder('PASSWORD').fill(randomPassword);
+//     await tryTrialComponent.getByRole('button', { name: 'TRY NOW' }).click()
+// });
+
+// import { expect, test } from '@playwright/test';
+
+// test.beforeEach(async ({ page }) => {
+//     await page.goto('/');
+//     await page.evaluate(() => {
+//         const sectionTry = document.querySelector('.baner__news');
+//         if (sectionTry) {
+//             sectionTry.scrollIntoView();
+//             return true; // return something to indicate success
+//         }
+//         return false; // return something to indicate failure
+//     });
+//   });
+
+// test('Check Baner News component presence', async({ page }) => {
+//     const banerNewsComponent = page.locator('#news');
+//     await expect(banerNewsComponent).toBeVisible();
+// });
+
+// test('Check baner news rubric text', async({ page }) => {
+//     const banerNewsRubricText = await page.getByRole('heading', { name: 'NEW FEATURES' }).textContent();
+//     const expectedBanerNewsRubricText = 'NEW FEATURES';
+//     expect(banerNewsRubricText).toContain(expectedBanerNewsRubricText);
+// });
+
+// test('Check baner news heading text', async({ page }) => {
+//     const banerNewsHeadingText = await page.locator('h2').filter({ hasText: 'Some awesone features' }).textContent();
+//     const expectedBanerNewsHeadingText = 'Some awesone features';
+//     expect(banerNewsHeadingText).toContain(expectedBanerNewsHeadingText);
+// });
+
+// test('Check news section content', async ({ page }) => {
+//     const newsBlocks = await page.locator('.ban_news .col-lg-4').all();
+    
+//     const expectedBlocks = [
+//         {
+//             image: 'images/baner-icon1.svg',
+//             title: 'Some awesone features',
+//             description: 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.'
+//         },
+//         {
+//             image: 'images/baner-icon2.svg',
+//             title: 'Some awesone features',
+//             description: 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.'
+//         },
+//         {
+//             image: 'images/baner-icon3.svg',
+//             title: 'Some awesone features',
+//             description: 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.'
+//         }
+//     ];
+    
+//     for (let i = 0; i < newsBlocks.length; i++) {
+//         const block = newsBlocks[i];
+//         const expectedBlock = expectedBlocks[i];
+        
+//         const imageElement = block.locator('img')
+//         const titleElement = block.locator('.content__subheading')
+//         const textElement = block.locator('.content__text')
+        
+//         const imageSrc = await imageElement.getAttribute('src');
+//         const titleText = await titleElement.textContent();
+//         const textContent = await textElement.textContent();
+        
+//         expect(imageSrc).toContain(expectedBlock.image);
+//         expect(titleText).toContain(expectedBlock.title);
+//         expect(textContent).toContain(expectedBlock.description);
+//     }
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
