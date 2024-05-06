@@ -50,8 +50,5 @@ export class PageBannerNews {
             expect(textContent).toContain(expectedBlock.description);
         }
     }
-
-
-
     
 }
