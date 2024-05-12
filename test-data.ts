@@ -60,3 +60,9 @@ export const expectedSection2ContentLink = '....';
 export const expectedSection2ContentText = 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn. Vestibulum felis euismod semper.';
 export const expectedSection2ImageSrc = 'images/macbook.png';
 
+//section3
+export const expectedSection3RubricText = 'NEW FEATURES';
+export const expectedSection3HeadingText = 'Some awesone features';
+export const expectedSection3ContentText = 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn. Vestibulum felis euismod semper.';
+export const expectedSection3ImageSrc = 'images/safari.svg';
+
