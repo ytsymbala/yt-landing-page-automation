@@ -33,10 +33,10 @@ export class PageBannerNews {
     }
 
     async showNewsSection() {
-        const getNewBlocks = await this.newsBlocks.all();
+        const getNewsBlocks = await this.newsBlocks.all();
 
-        for (let i = 0; i < getNewBlocks.length; i++) {
-            const block = getNewBlocks[i];
+        for (let i = 0; i < getNewsBlocks.length; i++) {
+            const block = getNewsBlocks[i];
             const expectedBlock = expectedBlocks[i];
             
             const imageElement = block.locator('img');
