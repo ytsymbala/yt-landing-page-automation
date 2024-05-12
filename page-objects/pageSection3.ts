@@ -1,5 +1,5 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { expectedSection2ContentLink, expectedSection2ContentText, expectedSection2HeadingText, expectedSection2ImageSrc, expectedSection2RubricText, expectedSection3ContentText, expectedSection3HeadingText, expectedSection3ImageSrc, expectedSection3RubricText } from '../test-data';
+import { expectedSection3ContentText, expectedSection3HeadingText, expectedSection3ImageSrc, expectedSection3RubricText } from '../test-data';
 
 export class PageSection3 {
     readonly page: Page;

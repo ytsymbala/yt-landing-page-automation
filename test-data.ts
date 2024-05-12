@@ -66,3 +66,33 @@ export const expectedSection3HeadingText = 'Some awesone features';
 export const expectedSection3ContentText = 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn. Vestibulum felis euismod semper.';
 export const expectedSection3ImageSrc = 'images/safari.svg';
 
+//About Clients section
+export const expectedClientsBlocks = [
+    {
+        image: 'images/user_1.svg',
+        name: 'Jonathon Doe',
+        title: 'Co Founder',
+        description: '“Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id gravida at eget metus. Etiasem malesuada magn”'
+    },
+    {
+        image: 'images/user_2.svg',
+        name: 'Jonathon Doe',
+        title: 'Co Founder',
+        description: '“Pellentesque ornare sem lacinia quam. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn”'
+    },
+    {
+        image: 'images/user_3.svg',
+        name: 'Jonathon Doe',
+        title: 'Co Founder',
+        description: '“Aenean eu leo quam. Pellentesque ornare sem lacinia qua emere wancerid elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn”'
+    }
+];
+
+export const expectedLogos = [
+    'images/partner-logo-1.svg',
+    'images/partner-logo-2.svg',
+    'images/partner-logo-3.svg',
+    'images/partner-logo-4.svg',
+    'images/partner-logo-5.svg',
+];
+
