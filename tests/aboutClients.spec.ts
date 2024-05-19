@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { test } from '@playwright/test';
 import { PageAboutClients } from '../page-objects/pageAboutClients';
 
 test.beforeEach(async ({ page }) => {

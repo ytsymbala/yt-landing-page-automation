@@ -36,12 +36,12 @@ export class PageVideoComponent {
 
     async showVideoPreloadAttribute(){
         const preloadAttribute = await this.videoComponent.getAttribute('preload');
-        await expect(preloadAttribute).toBe('auto');
+        expect(preloadAttribute).toBe('auto');
     }
 
     async showDefaultVideoState(){
         const hasMuteAttribute = await this.videoComponent.getAttribute('muted');
-        await expect(hasMuteAttribute).toBe('true');
+        expect(hasMuteAttribute).toBe('true');
     }
 
     async clickMuteUnmuteButton(){
@@ -69,6 +69,7 @@ export class PageVideoComponent {
     }
 
     async showHeroInfoText(){
+        await expect(this.heroInfo).toBeVisible();
         const getHeroInfo = await this.heroInfo.textContent();
         expect(getHeroInfo).toContain(expectedHeroInfo);
     }

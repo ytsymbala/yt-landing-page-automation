@@ -31,21 +31,25 @@ export class PageTryTrial {
     }
 
     async showTryTrialRubric() {
+        await expect(this.tryTrialRubric).toBeVisible();
         const getTryTrialRubricText = await this.tryTrialRubric.textContent();
         expect(getTryTrialRubricText).toContain(expectedTryTrialRubricText);
     }
 
     async showTryTrialHeading() {
+        await expect(this.tryTrialHeading).toBeVisible();
         const getTryTrialHeading = await this.tryTrialHeading.textContent();
         expect(getTryTrialHeading).toContain(expectedTryTrialHeadingText);
     }
     
     async showTryTrialButtonTextHelper() {
+        await expect(this.tryTextButtonInfo).toBeVisible();
         const getTryTextButtonInfo = await this.tryTextButtonInfo.textContent();
         expect(getTryTextButtonInfo).toContain(expectedTryTextButtonInfo);
     }
 
     async showTryTextForAgreements() {
+        await expect(this.tryTextForAgreements).toBeVisible();
         const getTryTextForAgreements = await this.tryTextForAgreements.textContent()
         expect(getTryTextForAgreements).toContain(expectedTryTextForAgreements);
     }
