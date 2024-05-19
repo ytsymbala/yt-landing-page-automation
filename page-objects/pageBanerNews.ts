@@ -1,15 +1,16 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { expectedBannerNewsHeadigText, expectedBannerNewsRubricText, expectedBlocks } from '../test-data';
+import { HelperBase } from './helperBase';
 
-export class PageBannerNews {
-    readonly page: Page;
+export class PageBannerNews extends HelperBase {
+    
     readonly bannerNewsComponent: Locator;
     readonly bannerNewsRubricText: Locator;
     readonly bannerNewsHeadingText: Locator;
     readonly newsBlocks: Locator;
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.bannerNewsComponent = page.locator('#news');
         this.bannerNewsRubricText = page.getByRole('heading', { name: 'NEW FEATURES' });
         this.bannerNewsHeadingText = page.locator('h2').filter({ hasText: 'Some awesone features' });

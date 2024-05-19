@@ -1,8 +1,9 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { expectedContentLink, expectedFirstDescription, expectedHeadingText, expectedRubricText, expectedSecondDescription } from '../test-data';
+import { HelperBase } from './helperBase';
 
-export class PageSection1 {
-    readonly page: Page;
+export class PageSection1 extends HelperBase {
+
     readonly sectionComponent: Locator;
     readonly section1Rubric: Locator;
     readonly section1Heading: Locator;
@@ -12,7 +13,7 @@ export class PageSection1 {
 
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.sectionComponent = page.locator('.section1');
         this.section1Rubric = page.getByRole('heading', { name: 'NEW DESIGN' });
         this.section1Heading = page.getByRole('heading', { name: 'There is no other platforms for you as like ....' });

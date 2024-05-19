@@ -1,8 +1,9 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { expectedTermsAndServiceLinkTitle, expectedTryTextButtonInfo, expectedTryTextForAgreements, expectedTryTrialHeadingText, expectedTryTrialRubricText } from '../test-data';
+import { HelperBase } from './helperBase';
 
-export class PageTryTrial {
-    readonly page: Page;
+export class PageTryTrial extends HelperBase {
+
     readonly tryTrialComponent: Locator;
     readonly tryTrialRubric: Locator;
     readonly tryTrialHeading: Locator;
@@ -14,7 +15,7 @@ export class PageTryTrial {
 
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.tryTrialComponent = page.locator('#trial');
         this.tryTrialRubric = page.locator('#trial').getByText('NEW FEATURES');
         this.tryTrialHeading = page.locator('.try__heading');

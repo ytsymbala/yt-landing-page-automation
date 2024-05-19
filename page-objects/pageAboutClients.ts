@@ -1,14 +1,15 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { expectedClientsBlocks, expectedLogos } from '../test-data';
+import { HelperBase } from './helperBase';
 
-export class PageAboutClients {
-    readonly page: Page;
+export class PageAboutClients extends HelperBase {
+
     readonly aboutClientsComponent: Locator;
     readonly aboutClientsBlocks: Locator;
     readonly clientsIconSection: Locator;
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.aboutClientsComponent = page.locator('.clients');
         this.aboutClientsBlocks = page.locator('.clients .col-lg-4');
         this.clientsIconSection = page.locator('.clients__icon');
