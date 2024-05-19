@@ -54,7 +54,7 @@ test('Check Terms & Services link and title', async({ page }) => {
     await tryTrial.showAndClickOnTermsAndServiceLink();
 });
 
-test('Check try Now Form', async({ page }) => {
+test('Fill and Submit try Now Form', async({ page }) => {
     const tryTrial = new PageTryTrial(page);
 
     const randomFullName = faker.person.fullName()
