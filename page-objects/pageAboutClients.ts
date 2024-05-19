@@ -29,6 +29,11 @@ export class PageAboutClients {
             const nameElement = block.locator('.client__name');
             const titleElement = block.locator('.content__rubric');
             const textElement = block.locator('.content__text_w');
+
+            await expect(imageElement).toBeVisible();
+            await expect(nameElement).toBeVisible();
+            await expect(titleElement).toBeVisible();
+            await expect(textElement).toBeVisible();
             
             const imageSrc = await imageElement.getAttribute('src');
             const nameText = await nameElement.textContent();
