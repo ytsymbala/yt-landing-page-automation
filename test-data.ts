@@ -96,3 +96,33 @@ export const expectedLogos = [
     'images/partner-logo-5.svg',
 ];
 
+//Footer section
+export const expectedFoterImageSrc = 'images/logo.svg';
+
+export const expectedTexts = [
+    'Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam.',
+    'USA &  CAN: 1-888-123-4567',
+    'Address: 34 Brokel Rd. NY'
+];
+
+export const footerlinksToTest = [
+    { title: 'Support', url: '#' },
+    { title: 'Help Center', url: '#' },
+    { title: 'Get Started', url: '#' },
+    { title: 'Contact Us', url: '#' },
+    { title: 'About US', url: '#' },
+    { title: 'About Us', url: '#' },
+    { title: 'Terms of Use', url: '#' },
+    { title: 'Privacy Policy', url: '#' },
+    { title: 'Get Newsletter', url: '#' },
+    
+];
+
+export const socialLinks = [
+    'https://dribbble.com',
+    'https://fb.com',
+    'https://plus.google.com',
+    //'https://twitter.com',
+    'https://github.com/nazar237',
+];
+

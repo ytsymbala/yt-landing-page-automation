@@ -621,6 +621,133 @@
 //     }
 // });
 
+//Updated checkLinkAndUrl function
+// export async function checkLinkAndUrl(page: Page, linkText: string, expectedUrl: string, locator: string) {
+//     //await page.evaluate(() => window.scrollTo(0, 0));
+//     //const element = await page.locator(`${locator}:has-text("${linkText}")`).first();
+//     let element;
+//     if (locator === '.f__ul .f__li a') {
+//         element = page.locator(locator).first();
+//     } else {
+//         element = page.locator(`${locator}:has-text("${linkText}")`).first();
+//     }
+//     // if (!element) {
+//     //     console.error(`Element with text "${linkText}" not found!`);
+//     //     return;
+//     // }
+//     await expect(element).toBeVisible();
+//     await element.click();
+//     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+//     if (linkText === 'Test' && expectedUrl === '/TEST/test.html') {
+//         await page.goBack();
+//     } else {
+//         await expect(page).toHaveURL(expectedUrl);
+//     }
+//     await page.evaluate(() => window.scrollTo(0, 0));
+// }
+
+// import { expect, test } from '@playwright/test';
+// import { checkLinkAndUrl } from '../page-objects/pageUtils';
+// import { faker } from '@faker-js/faker';
+
+// test.beforeEach(async ({ page }) => {
+//     await page.goto('/');
+//     await page.evaluate(() => {
+//         const sectionTry = document.querySelector('footer');
+//         if (sectionTry) {
+//             sectionTry.scrollIntoView();
+//             return true; // return something to indicate success
+//         }
+//         return false; // return something to indicate failure
+//     });
+//   });
+
+// test('Check Footer component presence', async ({ page }) => {
+//     const footerComponent = page.locator('footer#contacts');
+//     await expect(footerComponent).toBeVisible();
+// });
+
+// test('Check site logo in the footer', async ({ page }) => {
+//     const footerSiteLogo = await page.locator('#contacts').getByRole('img', { name: 'StartEx' }).getAttribute('src');
+//     const expectedFoterImageSrc = 'images/logo.svg';
+//     expect(footerSiteLogo).toContain(expectedFoterImageSrc);
+// });
+
+// test('Check all info text in the footer', async ({ page }) => {
+//     const paragraphElements = await page.locator('.f__info').all();
+
+//     const expectedTexts = [
+//         'Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam.',
+//         'USA &  CAN: 1-888-123-4567',
+//         'Address: 34 Brokel Rd. NY'
+//     ];
+
+//     for (let i = 0; i < paragraphElements.length; i++) {
+//         const paragraph = paragraphElements[i];
+//         const expectedText = await paragraph.textContent();
+//         expect(expectedText).toContain(expectedTexts[i]);
+//     }
+// });
+
+// test('Click and Check all footer links and titles', async ({ page }) => {
+//     const footerlinksToTest = [
+//         { title: 'Support', url: '#' },
+//         { title: 'Help Center', url: '#' },
+//         { title: 'Get Started', url: '#' },
+//         { title: 'Contact Us', url: '#' },
+//         { title: 'About US', url: '#' },
+//         { title: 'About Us', url: '#' },
+//         { title: 'Terms of Use', url: '#' },
+//         { title: 'Privacy Policy', url: '#' },
+//         { title: 'Get Newsletter', url: '#' },
+        
+//     ];
+    
+//     for (const link of footerlinksToTest) {
+//         await checkLinkAndUrl(page, link.title, link.url, '.f__ul .f__li a');
+//     }
+// });
+
+// test('Check presence of subscription form', async ({ page }) => {
+//     const inputElement = page.locator('.subscribe__input')
+//     const buttonElement = page.locator('.subscribe__button');
+
+//     await expect(inputElement).toBeVisible()
+//     await expect(buttonElement).toBeVisible()
+
+//     const inputType = await inputElement.getAttribute('type');
+//     const inputPlaceholder = await inputElement.getAttribute('placeholder');
+
+//     expect(inputType).toEqual('email');
+//     expect(inputPlaceholder).toEqual('EMAIL');
+// });
+
+// test('Fill and Submit subscribe form', async ({ page }) => {
+//     const randomEmail = faker.internet.exampleEmail()
+
+//     const submitSubscribeForm = page.locator('.f_subscribe');
+//     await submitSubscribeForm.getByPlaceholder('EMAIL').fill(randomEmail);
+//     await submitSubscribeForm.getByRole('button', { name: 'Send' }).click()
+// });
+
+// test('Click on each social link and verify page opens', async ({ page }) => {
+//     const socialLinks = [
+//         'https://dribbble.com',
+//         'https://fb.com',
+//         'https://plus.google.com',
+//         'https://twitter.com',
+//         'https://github.com/nazar237'
+//     ];
+
+//     for (const link of socialLinks) {
+//         const socialLinkElement = await page.locator(`.social__ul a[href="${link}"]`);
+//         await socialLinkElement.click();
+//         //await expect(page).toHaveURL(link);
+//         await page.goBack();
+//     }
+// });
+
+
 
 
 
