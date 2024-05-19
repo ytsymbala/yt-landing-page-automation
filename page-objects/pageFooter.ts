@@ -1,9 +1,10 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { expectedFoterImageSrc, expectedTexts, footerlinksToTest, socialLinks } from '../test-data';
 import { checkLinkAndUrl } from './pageUtils';
+import { HelperBase } from './helperBase';
 
-export class PageFooter {
-    readonly page: Page;
+export class PageFooter extends HelperBase {
+    
     readonly footerComponent: Locator;
     readonly footerSiteLogo: Locator;
     readonly footerParagraphElements: Locator;
@@ -12,7 +13,7 @@ export class PageFooter {
     readonly submitSubscribeForm: Locator;
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.footerComponent = page.locator('footer#contacts');
         this.footerSiteLogo = page.locator('#contacts').getByRole('img', { name: 'StartEx' });
         this.footerParagraphElements = page.locator('.f__info');

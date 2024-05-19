@@ -1,9 +1,10 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { checkLinkAndUrl } from './pageUtils'
 import { expectedSitreLogoSrc, expectedUserLogoSrc, headerlinksToTest, hoveredSrc, userItemsLinksToTest } from '../test-data';
+import { HelperBase } from './helperBase';
 
-export class PageHeader {
-    readonly page: Page;
+export class PageHeader extends HelperBase {
+
     readonly headerComponent: Locator;
     readonly siteLogo: Locator;
     readonly userLogoImg: Locator;
@@ -11,7 +12,7 @@ export class PageHeader {
 
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.headerComponent = page.locator('header');
         this.siteLogo = page.locator('img[alt="StartEx"]').first();
         this.userLogoImg = page.getByRole('img', { name: 'UserLogo' });

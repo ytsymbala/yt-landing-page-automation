@@ -1,7 +1,8 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { expectedHeroInfo, expectedHeroText, expectedVideoSrc } from '../test-data';
+import { HelperBase } from './helperBase';
 
-export class PageVideoComponent {
+export class PageVideoComponent extends HelperBase {
     readonly page: Page;
     readonly videoComponent: Locator;
     readonly videoSoundButton: Locator;
@@ -13,7 +14,7 @@ export class PageVideoComponent {
     readonly buttonTryNow: Locator;
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.videoComponent = page.locator('#bg__video');
         this.videoSoundButton = page.locator('#video__buts').getByRole('button');
         this.unmuteButton = page.locator('.hero__but__unmute');
