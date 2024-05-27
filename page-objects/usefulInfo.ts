@@ -746,6 +746,175 @@
 //         await page.goBack();
 //     }
 // });
+// Example of the test case based on the page object !!!!!!!
+
+// import { test } from '@playwright/test';
+// import { PageSection3 } from '../page-objects/pageSection3';
+
+// test.beforeEach(async ({ page }) => {
+//     await page.goto('/');
+//     await page.evaluate(() => {
+//         const sectionTry = document.querySelector('.section3');
+//         if (sectionTry) {
+//             sectionTry.scrollIntoView();
+//             return true; // return something to indicate success
+//         }
+//         return false; // return something to indicate failure
+//     });
+//   });
+
+// test('Check Section 3 component presence', async({ page }) => {
+//     const section3 = new PageSection3(page);
+//     await section3.showSection3Component();
+// });
+
+// test('Check section 3 rubric text', async({ page }) => {
+//     const section3 = new PageSection3(page);
+//     await section3.showSection3RubricText();
+// });
+
+// test('Check section 3 heading text', async({ page }) => {
+//     const section3 = new PageSection3(page);
+//     await section3.showSection3HeadingText();
+// })
+
+// test('Check section 3 content text', async({ page }) => {
+//     const section3 = new PageSection3(page);
+//     await section3.showSection3ContentText();
+// })
+
+// test('Check section 3 image', async({ page }) => {
+//     const section3 = new PageSection3(page);
+//     await section3.showSection3Image();
+// })
+
+// import { faker } from '@faker-js/faker';
+// import { test } from '@playwright/test';
+// import { PageTryTrial } from '../page-objects/pageTryTrial'
+
+// test.beforeEach(async ({ page }) => {
+//     await page.goto('/');
+//     await page.evaluate(() => {
+//         const sectionTry = document.querySelector('.try');
+//         if (sectionTry) {
+//             sectionTry.scrollIntoView();
+//             return true; // return something to indicate success
+//         }
+//         return false; // return something to indicate failure
+//     });
+//   });
+
+// test('Check Try Trial component presence', async({ page }) => {
+//     const tryTrial = new PageTryTrial(page);
+//     await tryTrial.showTryTrialComponent();
+// });
+
+// test('Check Try Trial rubric text', async({ page }) => {
+//     const tryTrial = new PageTryTrial(page);
+//     await tryTrial.showTryTrialRubric();
+// });
+
+// test('Check Try Trial Heading text', async({ page }) => {
+//     const tryTrial = new PageTryTrial(page);
+//     await tryTrial.showTryTrialHeading();
+// });
+
+// test('Check Try Trial text helper for button', async({ page }) => {
+//     const tryTrial = new PageTryTrial(page);
+//     await tryTrial.showTryTrialButtonTextHelper();
+// });
+
+// test('Check Try Trial text for Terms & Services.', async({ page }) => {
+//     const tryTrial = new PageTryTrial(page);
+//     await tryTrial.showTryTextForAgreements();
+// });
+
+// test('Check Trial Form elements', async({ page }) => {
+//     const tryTrial = new PageTryTrial(page);
+//     await tryTrial.showTryTrialFormElements();
+// });
+
+// test('Check mandatory fields for Try Trial form', async({ page }) => {
+//     const tryTrial = new PageTryTrial(page);
+//     await tryTrial.showTryTrialFormRequiredFields();
+// });
+
+// test('Check Terms & Services link and title', async({ page }) => {
+//     const tryTrial = new PageTryTrial(page);
+//     await tryTrial.showAndClickOnTermsAndServiceLink();
+// });
+
+// test('Fill and Submit try Now Form', async({ page }) => {
+//     const tryTrial = new PageTryTrial(page);
+
+//     const randomFullName = faker.person.fullName()
+//     const randomEmail = `${randomFullName.replace(/ /g, '')}${faker.number.int(1000)}@test.com`;
+//     const randomPassword = faker.internet.password()
+
+//     await tryTrial.fillAndSubmitTryTrialForm(randomFullName, randomEmail, randomPassword);
+// });
+
+// import { test } from '@playwright/test';
+// import { PageVideoComponent } from '../page-objects/pageVideoComponent';
+
+// test.beforeEach(async ({ page }) => {
+//     await page.goto('/');
+// });
+
+// test('Check video component presence', async ({ page }) => {
+//     const videoComponentPage = new PageVideoComponent(page);
+//     await videoComponentPage.showVideoComponent();
+// })
+
+// test('Check that valid video used', async({ page }) =>  {
+//     const videoComponentPage = new PageVideoComponent(page);
+//     await videoComponentPage.showUsedVideo();
+
+// })
+
+// test('Check video preload attribute', async ({ page }) => {
+//     const videoComponentPage = new PageVideoComponent(page);
+//     await videoComponentPage.showVideoPreloadAttribute();
+// });
+
+// test('Check that video is muted by default', async ({ page }) => {
+//     const videoComponentPage = new PageVideoComponent(page);
+//     await videoComponentPage.showDefaultVideoState();
+// })
+
+//  test('Check mute and unmute buttons', async ({ page }) => {
+//     const videoComponentPage = new PageVideoComponent(page);
+//     await videoComponentPage.clickMuteUnmuteButton();
+// });
+
+// test.skip('Check fullscreen resize button', async ({ page }) => {
+//     const videoComponentPage = new PageVideoComponent(page);
+//     await videoComponentPage.showFullscreenResize();
+// });
+
+// test('Check the hero banner title', async ({ page }) => {
+//     const videoComponentPage = new PageVideoComponent(page);
+//     await videoComponentPage.showHeroBannerTitle();
+// });
+
+// test('Check the hero info text', async ({ page }) => {
+//     const videoComponentPage = new PageVideoComponent(page);
+//     await videoComponentPage.showHeroInfoText();
+// })
+
+// test('Check that button "Try now" is displayed on the hero banner', async ({ page }) => {
+//     const videoComponentPage = new PageVideoComponent(page);
+//     await videoComponentPage.showTryNowButton();
+// })
+
+
+
+
+
+
+
+
+
 
 
 

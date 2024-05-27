@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { PageSection2 } from '../page-objects/pageSection2';
+import { PageManager } from '../page-objects/pageManager';
 
 test.beforeEach(async ({ page }) => {
     await page.goto('/');
@@ -14,31 +14,31 @@ test.beforeEach(async ({ page }) => {
   });
 
 test('Check Section2 component presence', async({ page }) => {
-    const section2 = new PageSection2(page);
-    await section2.showSection2Component();
+    const pm = new PageManager(page);
+    await pm.onSection2Component().showSection2Component();
 });
 
 test('Check section 2 rubric text', async({ page }) => {
-    const section2 = new PageSection2(page);
-    await section2.showSection2RubricText();
+    const pm = new PageManager(page);
+    await pm.onSection2Component().showSection2RubricText();
 });
 
 test('Check section 2 heading text', async({ page }) => {
-    const section2 = new PageSection2(page);
-    await section2.showSection2HeadingText();
+    const pm = new PageManager(page);
+    await pm.onSection2Component().showSection2HeadingText();
 })
 
 test('Check section 2 content link', async({ page }) => {
-    const section2 = new PageSection2(page);
-    await section2.showSection2ContentLink();
+    const pm = new PageManager(page);
+    await pm.onSection2Component().showSection2ContentLink();
 })
 
 test('Check section 2 content text', async({ page }) => {
-    const section2 = new PageSection2(page);
-    await section2.showSection2ContentText();
+    const pm = new PageManager(page);
+    await pm.onSection2Component().showSection2ContentText();
 })
 
 test('Check section 2 image', async({ page }) => {
-    const section2 = new PageSection2(page);
-    await section2.showSection2Image();
+    const pm = new PageManager(page);
+    await pm.onSection2Component().showSection2Image();
 })
