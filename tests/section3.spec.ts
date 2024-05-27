@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { PageSection3 } from '../page-objects/pageSection3';
+import { PageManager } from '../page-objects/pageManager';
 
 test.beforeEach(async ({ page }) => {
     await page.goto('/');
@@ -14,26 +14,26 @@ test.beforeEach(async ({ page }) => {
   });
 
 test('Check Section 3 component presence', async({ page }) => {
-    const section3 = new PageSection3(page);
-    await section3.showSection3Component();
+    const pm = new PageManager(page);
+    await pm.onSection3Component().showSection3Component();
 });
 
 test('Check section 3 rubric text', async({ page }) => {
-    const section3 = new PageSection3(page);
-    await section3.showSection3RubricText();
+    const pm = new PageManager(page);
+    await pm.onSection3Component().showSection3RubricText();
 });
 
 test('Check section 3 heading text', async({ page }) => {
-    const section3 = new PageSection3(page);
-    await section3.showSection3HeadingText();
+    const pm = new PageManager(page);
+    await pm.onSection3Component().showSection3HeadingText();
 })
 
 test('Check section 3 content text', async({ page }) => {
-    const section3 = new PageSection3(page);
-    await section3.showSection3ContentText();
+    const pm = new PageManager(page);
+    await pm.onSection3Component().showSection3ContentText();
 })
 
 test('Check section 3 image', async({ page }) => {
-    const section3 = new PageSection3(page);
-    await section3.showSection3Image();
+    const pm = new PageManager(page);
+    await pm.onSection3Component().showSection3Image();
 })

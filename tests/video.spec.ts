@@ -1,53 +1,53 @@
 import { test } from '@playwright/test';
-import { PageVideoComponent } from '../page-objects/pageVideoComponent';
+import { PageManager } from '../page-objects/pageManager';
 
 test.beforeEach(async ({ page }) => {
     await page.goto('/');
 });
 
 test('Check video component presence', async ({ page }) => {
-    const videoComponentPage = new PageVideoComponent(page);
-    await videoComponentPage.showVideoComponent();
+    const pm = new PageManager(page);
+    await pm.onVideoComponent().showVideoComponent();
 })
 
 test('Check that valid video used', async({ page }) =>  {
-    const videoComponentPage = new PageVideoComponent(page);
-    await videoComponentPage.showUsedVideo();
+    const pm = new PageManager(page);
+    await pm.onVideoComponent().showUsedVideo();
 
 })
 
 test('Check video preload attribute', async ({ page }) => {
-    const videoComponentPage = new PageVideoComponent(page);
-    await videoComponentPage.showVideoPreloadAttribute();
+    const pm = new PageManager(page);
+    await pm.onVideoComponent().showVideoPreloadAttribute();
 });
 
 test('Check that video is muted by default', async ({ page }) => {
-    const videoComponentPage = new PageVideoComponent(page);
-    await videoComponentPage.showDefaultVideoState();
+    const pm = new PageManager(page);
+    await pm.onVideoComponent().showDefaultVideoState();
 })
 
  test('Check mute and unmute buttons', async ({ page }) => {
-    const videoComponentPage = new PageVideoComponent(page);
-    await videoComponentPage.clickMuteUnmuteButton();
+    const pm = new PageManager(page);
+    await pm.onVideoComponent().clickMuteUnmuteButton();
 });
 
 test.skip('Check fullscreen resize button', async ({ page }) => {
-    const videoComponentPage = new PageVideoComponent(page);
-    await videoComponentPage.showFullscreenResize();
+    const pm = new PageManager(page);
+    await pm.onVideoComponent().showFullscreenResize();
 });
 
 test('Check the hero banner title', async ({ page }) => {
-    const videoComponentPage = new PageVideoComponent(page);
-    await videoComponentPage.showHeroBannerTitle();
+    const pm = new PageManager(page);
+    await pm.onVideoComponent().showHeroBannerTitle();
 });
 
 test('Check the hero info text', async ({ page }) => {
-    const videoComponentPage = new PageVideoComponent(page);
-    await videoComponentPage.showHeroInfoText();
+    const pm = new PageManager(page);
+    await pm.onVideoComponent().showHeroInfoText();
 })
 
 test('Check that button "Try now" is displayed on the hero banner', async ({ page }) => {
-    const videoComponentPage = new PageVideoComponent(page);
-    await videoComponentPage.showTryNowButton();
+    const pm = new PageManager(page);
+    await pm.onVideoComponent().showTryNowButton();
 })
 

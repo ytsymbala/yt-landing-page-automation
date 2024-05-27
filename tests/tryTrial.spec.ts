@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { test } from '@playwright/test';
-import { PageTryTrial } from '../page-objects/pageTryTrial'
+import { PageManager } from '../page-objects/pageManager';
 
 test.beforeEach(async ({ page }) => {
     await page.goto('/');
@@ -15,53 +15,53 @@ test.beforeEach(async ({ page }) => {
   });
 
 test('Check Try Trial component presence', async({ page }) => {
-    const tryTrial = new PageTryTrial(page);
-    await tryTrial.showTryTrialComponent();
+    const pm = new PageManager(page);
+    await pm.onTryTrialComponent().showTryTrialComponent();
 });
 
 test('Check Try Trial rubric text', async({ page }) => {
-    const tryTrial = new PageTryTrial(page);
-    await tryTrial.showTryTrialRubric();
+    const pm = new PageManager(page);
+    await pm.onTryTrialComponent().showTryTrialRubric();
 });
 
 test('Check Try Trial Heading text', async({ page }) => {
-    const tryTrial = new PageTryTrial(page);
-    await tryTrial.showTryTrialHeading();
+    const pm = new PageManager(page);
+    await pm.onTryTrialComponent().showTryTrialHeading();
 });
 
 test('Check Try Trial text helper for button', async({ page }) => {
-    const tryTrial = new PageTryTrial(page);
-    await tryTrial.showTryTrialButtonTextHelper();
+    const pm = new PageManager(page);
+    await pm.onTryTrialComponent().showTryTrialButtonTextHelper();
 });
 
 test('Check Try Trial text for Terms & Services.', async({ page }) => {
-    const tryTrial = new PageTryTrial(page);
-    await tryTrial.showTryTextForAgreements();
+    const pm = new PageManager(page);
+    await pm.onTryTrialComponent().showTryTextForAgreements();
 });
 
 test('Check Trial Form elements', async({ page }) => {
-    const tryTrial = new PageTryTrial(page);
-    await tryTrial.showTryTrialFormElements();
+    const pm = new PageManager(page);
+    await pm.onTryTrialComponent().showTryTrialFormElements();
 });
 
 test('Check mandatory fields for Try Trial form', async({ page }) => {
-    const tryTrial = new PageTryTrial(page);
-    await tryTrial.showTryTrialFormRequiredFields();
+    const pm = new PageManager(page);
+    await pm.onTryTrialComponent().showTryTrialFormRequiredFields();
 });
 
 test('Check Terms & Services link and title', async({ page }) => {
-    const tryTrial = new PageTryTrial(page);
-    await tryTrial.showAndClickOnTermsAndServiceLink();
+    const pm = new PageManager(page);
+    await pm.onTryTrialComponent().showAndClickOnTermsAndServiceLink();
 });
 
 test('Fill and Submit try Now Form', async({ page }) => {
-    const tryTrial = new PageTryTrial(page);
+    const pm = new PageManager(page);
 
     const randomFullName = faker.person.fullName()
     const randomEmail = `${randomFullName.replace(/ /g, '')}${faker.number.int(1000)}@test.com`;
     const randomPassword = faker.internet.password()
 
-    await tryTrial.fillAndSubmitTryTrialForm(randomFullName, randomEmail, randomPassword);
+    await pm.onTryTrialComponent().fillAndSubmitTryTrialForm(randomFullName, randomEmail, randomPassword);
 });
 
 

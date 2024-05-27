@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
 import { faker } from '@faker-js/faker';
-import { PageFooter } from '../page-objects/pageFooter';
+import { PageManager } from '../page-objects/pageManager';
 
 test.beforeEach(async ({ page }) => {
     await page.goto('/');
@@ -15,39 +15,39 @@ test.beforeEach(async ({ page }) => {
   });
 
 test('Check Footer component presence', async ({ page }) => {
-    const footer = new PageFooter(page);
-    await footer.showFooterComponent();
+    const pm = new PageManager(page);
+    await pm.onFooterComponent().showFooterComponent();
 });
 
 test('Check site logo in the footer', async ({ page }) => {
-    const footer = new PageFooter(page);
-    await footer.showFooterSiteLogo();
+    const pm = new PageManager(page);
+    await pm.onFooterComponent().showFooterSiteLogo();
 });
 
 test('Check all info text in the footer', async ({ page }) => {
-    const footer = new PageFooter(page);
-    await footer.showFooterInfoText();
+    const pm = new PageManager(page);
+    await pm.onFooterComponent().showFooterInfoText();
 });
 
 test('Click and Check all footer links and titles', async ({ page }) => {
-    const footer = new PageFooter(page);
-    await footer.checkAndClickOnFooterLinks();
+    const pm = new PageManager(page);
+    await pm.onFooterComponent().checkAndClickOnFooterLinks();
 });
 
 test('Check presence of subscription form', async ({ page }) => {
-    const footer = new PageFooter(page);
-    await footer.showSubscibeForm();
+    const pm = new PageManager(page);
+    await pm.onFooterComponent().showSubscibeForm();
 });
 
 test('Fill and Submit subscribe form', async ({ page }) => {
-    const footer = new PageFooter(page);
+    const pm = new PageManager(page);
 
     const randomEmail = faker.internet.exampleEmail();
-    await footer.fillAndSubmitFooterSubscribeForm(randomEmail);
+    await pm.onFooterComponent().fillAndSubmitFooterSubscribeForm(randomEmail);
 });
 
 test('Click on each social link and verify page opens', async ({ page }) => {
-    const footer = new PageFooter(page);
-    await footer.checkAndClickOnSocialLinks();
+    const pm = new PageManager(page);
+    await pm.onFooterComponent().checkAndClickOnSocialLinks();
 });
 

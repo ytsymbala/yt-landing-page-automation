@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { PageBannerNews } from '../page-objects/pageBanerNews';
+import { PageManager } from '../page-objects/pageManager';
 
 test.beforeEach(async ({ page }) => {
     await page.goto('/');
@@ -14,23 +14,23 @@ test.beforeEach(async ({ page }) => {
   });
 
 test('Check Baner News component presence', async({ page }) => {
-    const bannerNews = new PageBannerNews(page);
-    await bannerNews.showBannerNewsComponent();
+    const pm = new PageManager(page);
+    await pm.onBannerNewsComponent().showBannerNewsComponent();
 });
 
 test('Check baner news rubric text', async({ page }) => {
-    const bannerNews = new PageBannerNews(page);
-    await bannerNews.showBannerNewsRubricText();
+    const pm = new PageManager(page);
+    await pm.onBannerNewsComponent().showBannerNewsRubricText();
 });
 
 test('Check baner news heading text', async({ page }) => {
-    const bannerNews = new PageBannerNews(page);
-    await bannerNews.showBannerNewsHeadingText();
+    const pm = new PageManager(page);
+    await pm.onBannerNewsComponent().showBannerNewsHeadingText();
 });
 
 test('Check news section content', async ({ page }) => {
-    const bannerNews = new PageBannerNews(page);
-    await bannerNews.showNewsSection();
+    const pm = new PageManager(page);
+    await pm.onBannerNewsComponent().showNewsSection();
 });
 
 

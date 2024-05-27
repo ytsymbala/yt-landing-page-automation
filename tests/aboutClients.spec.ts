@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { PageAboutClients } from '../page-objects/pageAboutClients';
+import { PageManager } from '../page-objects/pageManager';
 
 test.beforeEach(async ({ page }) => {
     await page.goto('/');
@@ -14,17 +14,17 @@ test.beforeEach(async ({ page }) => {
   });
 
 test('Check About Clients component presence', async({ page }) => {
-    const aboutClients = new PageAboutClients(page);
-    await aboutClients.showAboutClientsComponent();
+    const pm = new PageManager(page);
+    await pm.onAboutClientsComponent().showAboutClientsComponent();
 });
 
 test('Check About Clients section content', async ({ page }) => {
-    const aboutClients = new PageAboutClients(page);
-    await aboutClients.showClientsContent();
+    const pm = new PageManager(page);
+    await pm.onAboutClientsComponent().showClientsContent();
 });
 
 test('Check About Clients section logos', async ({ page }) => {
-    const aboutClients = new PageAboutClients(page);
-    await aboutClients.showClientsLogos();
+    const pm = new PageManager(page);
+    await pm.onAboutClientsComponent().showClientsLogos();
 });
 
