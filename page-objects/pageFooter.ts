@@ -1,10 +1,13 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { expectedFoterImageSrc, expectedTexts, footerlinksToTest, socialLinks } from '../test-data';
+import { expectedFoterImageSrc, 
+    expectedTexts, 
+    footerlinksToTest, 
+    socialLinks 
+} from '../test-data';
 import { checkLinkAndUrl } from './pageUtils';
 import { HelperBase } from './helperBase';
 
 export class PageFooter extends HelperBase {
-    
     readonly footerComponent: Locator;
     readonly footerSiteLogo: Locator;
     readonly footerParagraphElements: Locator;

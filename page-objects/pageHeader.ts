@@ -1,10 +1,14 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { checkLinkAndUrl } from './pageUtils'
-import { expectedSitreLogoSrc, expectedUserLogoSrc, headerlinksToTest, hoveredSrc, userItemsLinksToTest } from '../test-data';
+import { checkLinkAndUrl } from './pageUtils';
+import { expectedSitreLogoSrc, 
+    expectedUserLogoSrc, 
+    headerlinksToTest, 
+    hoveredSrc, 
+    userItemsLinksToTest 
+} from '../test-data';
 import { HelperBase } from './helperBase';
 
 export class PageHeader extends HelperBase {
-
     readonly headerComponent: Locator;
     readonly siteLogo: Locator;
     readonly userLogoImg: Locator;

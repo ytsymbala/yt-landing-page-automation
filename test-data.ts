@@ -1,3 +1,4 @@
+//Test Data for Header component
 export const headerlinksToTest = [
     { title: 'Home', url: '#home' },
     { title: 'Trial', url: '#trial' },
@@ -18,22 +19,26 @@ export const expectedSitreLogoSrc = 'images/logo.svg';
 export const expectedUserLogoSrc = 'images/user2.svg';
 export const hoveredSrc = 'images/user1.svg'
 
+//Test Data for Video component
 export const expectedVideoSrc = 'video/315536202_1280.mp4';
 export const expectedHeroText = ['There is no other', 'platforms for you as like'];
 export const expectedHeroInfo = '* No neds to add cards details *';
 
+//Test Data for Section 1 component
 export const expectedRubricText = 'NEW DESIGN';
 export const expectedHeadingText = 'There is no other platforms for you as like';
 export const expectedContentLink = '....';
 export const expectedFirstDescription = 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.';
 export const expectedSecondDescription = 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.';
 
+//Test Data for Try Trial component
 export const expectedTryTrialRubricText = 'NEW FEATURES';
 export const expectedTryTrialHeadingText = 'Over 100000 designers are using';
 export const expectedTryTextButtonInfo = '30 days free trial for all.';
 export const expectedTryTextForAgreements = 'By Signing up you agree to our ';
 export const expectedTermsAndServiceLinkTitle = 'Terms & Services.';
 
+//Test Data for Banner News Component
 export const expectedBannerNewsRubricText = 'NEW FEATURES';
 export const expectedBannerNewsHeadigText = 'Some awesone features';
 export const expectedBlocks = [
@@ -54,19 +59,20 @@ export const expectedBlocks = [
     }
 ];
 
+//Test Data for Section 2 component
 export const expectedSection2RubricText = 'NEW DESIGN';
 export const expectedSection2HeadingText = 'Resposive design, just need your tap';
 export const expectedSection2ContentLink = '....';
 export const expectedSection2ContentText = 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn. Vestibulum felis euismod semper.';
 export const expectedSection2ImageSrc = 'images/macbook.png';
 
-//section3
+//Test Data for Section 3 component
 export const expectedSection3RubricText = 'NEW FEATURES';
 export const expectedSection3HeadingText = 'Some awesone features';
 export const expectedSection3ContentText = 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn. Vestibulum felis euismod semper.';
 export const expectedSection3ImageSrc = 'images/safari.svg';
 
-//About Clients section
+//Test Data for About Clients component
 export const expectedClientsBlocks = [
     {
         image: 'images/user_1.svg',
@@ -96,7 +102,7 @@ export const expectedLogos = [
     'images/partner-logo-5.svg',
 ];
 
-//Footer section
+//Test Data for Footer component
 export const expectedFoterImageSrc = 'images/logo.svg';
 
 export const expectedTexts = [

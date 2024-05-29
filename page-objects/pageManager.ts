@@ -1,13 +1,13 @@
-import { Page } from "@playwright/test"
-import { PageAboutClients } from "./pageAboutClients"
-import { PageBannerNews } from "./pageBanerNews"
-import { PageFooter } from "./pageFooter"
-import { PageHeader } from "./pageHeader"
-import { PageSection1 } from "./pageSection1"
-import { PageSection2 } from "./pageSection2"
-import { PageSection3 } from "./pageSection3"
-import { PageTryTrial } from "./pageTryTrial"
-import { PageVideoComponent } from "./pageVideoComponent"
+import { Page } from "@playwright/test";
+import { PageAboutClients } from "./pageAboutClients";
+import { PageBannerNews } from "./pageBanerNews";
+import { PageFooter } from "./pageFooter";
+import { PageHeader } from "./pageHeader";
+import { PageSection1 } from "./pageSection1";
+import { PageSection2 } from "./pageSection2";
+import { PageSection3 } from "./pageSection3";
+import { PageTryTrial } from "./pageTryTrial";
+import { PageVideoComponent } from "./pageVideoComponent";
 
 
 export class PageManager {

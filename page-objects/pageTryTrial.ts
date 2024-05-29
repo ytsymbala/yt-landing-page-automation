@@ -1,9 +1,14 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { expectedTermsAndServiceLinkTitle, expectedTryTextButtonInfo, expectedTryTextForAgreements, expectedTryTrialHeadingText, expectedTryTrialRubricText } from '../test-data';
+import { 
+    expectedTermsAndServiceLinkTitle, 
+    expectedTryTextButtonInfo, 
+    expectedTryTextForAgreements, 
+    expectedTryTrialHeadingText, 
+    expectedTryTrialRubricText 
+} from '../test-data';
 import { HelperBase } from './helperBase';
 
 export class PageTryTrial extends HelperBase {
-
     readonly tryTrialComponent: Locator;
     readonly tryTrialRubric: Locator;
     readonly tryTrialHeading: Locator;
@@ -23,7 +28,7 @@ export class PageTryTrial extends HelperBase {
         this.tryTextForAgreements = page.locator('.try__text').nth(1);
         this.formElements = page.locator('.contact__ul .try__input');
         this.formSubmitButton = page.locator('.try__button');
-        this.termsAndServiceLink = page.getByRole('link', { name: 'Terms & Services.' })
+        this.termsAndServiceLink = page.getByRole('link', { name: 'Terms & Services.' });
 
     }
 
@@ -51,7 +56,7 @@ export class PageTryTrial extends HelperBase {
 
     async showTryTextForAgreements() {
         await expect(this.tryTextForAgreements).toBeVisible();
-        const getTryTextForAgreements = await this.tryTextForAgreements.textContent()
+        const getTryTextForAgreements = await this.tryTextForAgreements.textContent();
         expect(getTryTextForAgreements).toContain(expectedTryTextForAgreements);
     }
 
@@ -62,17 +67,17 @@ export class PageTryTrial extends HelperBase {
     }
 
     async showTryTrialFormRequiredFields() {
-        const formElements = await this.formElements.all()
+        const formElements = await this.formElements.all();
         for (const inputElement of formElements) {
-            const isRequired = await inputElement.getAttribute('required') !== null
+            const isRequired = await inputElement.getAttribute('required') !== null;
             expect(isRequired).toBe(true);
         }
 
     }
 
     async showAndClickOnTermsAndServiceLink() {
-        const getTermsAndServiceLink = await this.termsAndServiceLink.textContent()
-        await this.termsAndServiceLink.click()
+        const getTermsAndServiceLink = await this.termsAndServiceLink.textContent();
+        await this.termsAndServiceLink.click();
         expect(this.page.url()).toMatch(/#/);
         expect(getTermsAndServiceLink).toContain(expectedTermsAndServiceLinkTitle);
     }
@@ -81,7 +86,7 @@ export class PageTryTrial extends HelperBase {
         await this.tryTrialComponent.getByPlaceholder('FULL NAME').fill(fullName);
         await this.tryTrialComponent.getByPlaceholder('YOUR EMAIL').fill(email);
         await this.tryTrialComponent.getByPlaceholder('PASSWORD').fill(password);
-        await this.tryTrialComponent.getByRole('button', { name: 'TRY NOW' }).click()
+        await this.tryTrialComponent.getByRole('button', { name: 'TRY NOW' }).click();
     }
 
 }

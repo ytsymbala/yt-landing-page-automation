@@ -1,9 +1,11 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { expectedBannerNewsHeadigText, expectedBannerNewsRubricText, expectedBlocks } from '../test-data';
+import { expectedBannerNewsHeadigText, 
+    expectedBannerNewsRubricText, 
+    expectedBlocks 
+} from '../test-data';
 import { HelperBase } from './helperBase';
 
 export class PageBannerNews extends HelperBase {
-    
     readonly bannerNewsComponent: Locator;
     readonly bannerNewsRubricText: Locator;
     readonly bannerNewsHeadingText: Locator;
@@ -22,13 +24,13 @@ export class PageBannerNews extends HelperBase {
     }
 
     async showBannerNewsRubricText() {
-        await expect(this.bannerNewsRubricText).toBeVisible()
+        await expect(this.bannerNewsRubricText).toBeVisible();
         const getBannerNewsRubricText = await this.bannerNewsRubricText.textContent();
         expect(getBannerNewsRubricText).toContain(expectedBannerNewsRubricText);
     }
 
     async showBannerNewsHeadingText() {
-        await expect(this.bannerNewsHeadingText).toBeVisible()
+        await expect(this.bannerNewsHeadingText).toBeVisible();
         const getBannerNewsHeadingText = await this.bannerNewsHeadingText.textContent();
         expect(getBannerNewsHeadingText).toContain(expectedBannerNewsHeadigText);
     }
@@ -56,7 +58,6 @@ export class PageBannerNews extends HelperBase {
             expect(titleText).toContain(expectedBlock.title);
             expect(textContent).toContain(expectedBlock.description);
         }
-    }
-    
+    } 
 }
 
