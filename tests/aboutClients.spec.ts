@@ -1,30 +1,18 @@
-import { test } from '@playwright/test';
-import { PageManager } from '../page-objects/pageManager';
+import { test } from '../page-objects/test-options';
 
-test.beforeEach(async ({ page }) => {
-    await page.goto('/');
-    await page.evaluate(() => {
-        const sectionTry = document.querySelector('.clients');
-        if (sectionTry) {
-            sectionTry.scrollIntoView();
-            return true; // return something to indicate success
-        }
-        return false; // return something to indicate failure
-    });
+test.beforeEach(async ({ navigateTo }) => {
+    await navigateTo('.clients');
   });
 
-test('Check About Clients component presence', async({ page }) => {
-    const pm = new PageManager(page);
-    await pm.onAboutClientsComponent().showAboutClientsComponent();
+test('Check About Clients component presence', async({ pageManager }) => {
+    await pageManager.onAboutClientsComponent().showAboutClientsComponent();
 });
 
-test('Check About Clients section content', async ({ page }) => {
-    const pm = new PageManager(page);
-    await pm.onAboutClientsComponent().showClientsContent();
+test('Check About Clients section content', async ({ pageManager }) => {
+    await pageManager.onAboutClientsComponent().showClientsContent();
 });
 
-test('Check About Clients section logos', async ({ page }) => {
-    const pm = new PageManager(page);
-    await pm.onAboutClientsComponent().showClientsLogos();
+test('Check About Clients section logos', async ({ pageManager }) => {
+    await pageManager.onAboutClientsComponent().showClientsLogos();
 });
 
