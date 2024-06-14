@@ -5,7 +5,7 @@ test.beforeEach(async ({ navigateTo }) => {
     await navigateTo('.try');
   });
 
-test('Check Try Trial component presence', async({ pageManager }) => {
+test('Check Try Trial component presence @smoke', async({ pageManager }) => {
     await pageManager.onTryTrialComponent().showTryTrialComponent();
 });
 
@@ -37,7 +37,7 @@ test('Check Terms & Services link and title', async({ pageManager }) => {
     await pageManager.onTryTrialComponent().showAndClickOnTermsAndServiceLink();
 });
 
-test('Fill and Submit try Now Form', async({ pageManager }) => {
+test('Fill and Submit try Now Form @smoke', async({ pageManager }) => {
     const randomFullName = faker.person.fullName();
     const randomEmail = `${randomFullName.replace(/ /g, '')}${faker.number.int(1000)}@test.com`;
     const randomPassword = faker.internet.password();
