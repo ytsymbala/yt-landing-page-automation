@@ -1,10 +1,10 @@
-import { test } from '../page-objects/test-options';
+import { test } from '../page-objects/fixtures';
 
 test.beforeEach(async ({ navigateTo }) => {
     await navigateTo('.baner__news');
   });
 
-test('Check Baner News component presence', async({ pageManager }) => {
+test('Check Baner News component presence @smoke', async({ pageManager }) => {
     await pageManager.onBannerNewsComponent().showBannerNewsComponent();
 });
 

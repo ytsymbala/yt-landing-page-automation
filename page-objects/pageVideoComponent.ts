@@ -1,9 +1,12 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { expectedHeroInfo, expectedHeroText, expectedVideoSrc } from '../test-data';
+import { 
+    expectedHeroInfo,
+    expectedHeroText, 
+    expectedVideoSrc 
+} from '../test-data';
 import { HelperBase } from './helperBase';
 
 export class PageVideoComponent extends HelperBase {
-    readonly page: Page;
     readonly videoComponent: Locator;
     readonly videoSoundButton: Locator;
     readonly unmuteButton: Locator;

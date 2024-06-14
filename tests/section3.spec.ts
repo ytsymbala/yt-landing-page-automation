@@ -1,10 +1,10 @@
-import { test } from '../page-objects/test-options';
+import { test } from '../page-objects/fixtures';
 
 test.beforeEach(async ({ navigateTo }) => {
     await navigateTo('.section3');
   });
 
-test('Check Section 3 component presence', async({ pageManager }) => {
+test('Check Section 3 component presence @smoke', async({ pageManager }) => {
     await pageManager.onSection3Component().showSection3Component();
 });
 

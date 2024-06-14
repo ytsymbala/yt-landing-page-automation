@@ -1,10 +1,10 @@
-import { test } from '../page-objects/test-options';
+import { test } from '../page-objects/fixtures';
 
 test.beforeEach(async ({ navigateTo }) => {
     await navigateTo('.clients');
   });
 
-test('Check About Clients component presence', async({ pageManager }) => {
+test('Check About Clients component presence @smoke', async({ pageManager }) => {
     await pageManager.onAboutClientsComponent().showAboutClientsComponent();
 });
 

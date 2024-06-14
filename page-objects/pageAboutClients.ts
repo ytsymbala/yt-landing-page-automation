@@ -1,9 +1,10 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { expectedClientsBlocks, expectedLogos } from '../test-data';
+import { expectedClientsBlocks, 
+    expectedLogos 
+} from '../test-data';
 import { HelperBase } from './helperBase';
 
 export class PageAboutClients extends HelperBase {
-
     readonly aboutClientsComponent: Locator;
     readonly aboutClientsBlocks: Locator;
     readonly clientsIconSection: Locator;
@@ -20,7 +21,7 @@ export class PageAboutClients extends HelperBase {
     }
 
     async showClientsContent() {
-        const getAboutClientsBlocks = await this.aboutClientsBlocks.all()
+        const getAboutClientsBlocks = await this.aboutClientsBlocks.all();
         
         for (let i = 0; i < getAboutClientsBlocks.length; i++) {
             const block = getAboutClientsBlocks[i];

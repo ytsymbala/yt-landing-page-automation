@@ -1,10 +1,10 @@
-import { test } from '../page-objects/test-options';
+import { test } from '../page-objects/fixtures';
 
 test.beforeEach(async ({ navigateTo }) => {
     await navigateTo('.hero-baner#home');
   });
 
-test('Check video component presence', async ({ pageManager }) => {
+test('Check video component presence @smoke', async ({ pageManager }) => {
     await pageManager.onVideoComponent().showVideoComponent();
 });
 

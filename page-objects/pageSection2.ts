@@ -1,9 +1,13 @@
 import { Page, Locator, expect } from '@playwright/test';
-import { expectedSection2ContentLink, expectedSection2ContentText, expectedSection2HeadingText, expectedSection2ImageSrc, expectedSection2RubricText } from '../test-data';
+import { expectedSection2ContentLink, 
+    expectedSection2ContentText, 
+    expectedSection2HeadingText, 
+    expectedSection2ImageSrc, 
+    expectedSection2RubricText 
+} from '../test-data';
 import { HelperBase } from './helperBase';
 
 export class PageSection2 extends HelperBase {
-
     readonly section2Component: Locator;
     readonly section2RubricText: Locator;
     readonly section2HeadingText: Locator;
