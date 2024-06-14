@@ -1,4 +1,4 @@
-import { test } from '../page-objects/test-options';
+import { test } from '../page-objects/fixtures';
 import { faker } from '@faker-js/faker';
 
 test.beforeEach(async ({ navigateTo }) => {

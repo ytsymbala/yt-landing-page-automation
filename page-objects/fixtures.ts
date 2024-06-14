@@ -1,5 +1,5 @@
 import {test as base} from '@playwright/test';
-import { PageManager } from '../page-objects/pageManager';
+import { PageManager } from './pageManager';
 
 // Declaration of the test options type
 export type TestOptions = {
