@@ -1,47 +1,46 @@
 //Old Methods:
 
+// async headerTabsDisplayedAndLinksWorks() {
+//     const linksToTest = [
+//         { text: 'Home', url: '#home' },
+//         { text: 'Trial', url: '#trial' },
+//         { text: 'News', url: '#news' },
+//         { text: 'About us', url: '#about' },
+//         { text: 'Test', url: '/TEST/test.html' },
+//         { text: 'Contacts', url: '#contacts' },
 
-    // async headerTabsDisplayedAndLinksWorks() {
-    //     const linksToTest = [
-    //         { text: 'Home', url: '#home' },
-    //         { text: 'Trial', url: '#trial' },
-    //         { text: 'News', url: '#news' },
-    //         { text: 'About us', url: '#about' },
-    //         { text: 'Test', url: '/TEST/test.html' },
-    //         { text: 'Contacts', url: '#contacts' },
+//     ];
 
-    //     ];
+//     for (const link of linksToTest) {
+//         await this.checkHeaderLinksAndTitles(link.text, link.url);
+//     }
+// }
 
-    //     for (const link of linksToTest) {
-    //         await this.checkHeaderLinksAndTitles(link.text, link.url);
-    //     }
-    // }
+// private async checkHeaderLinksAndTitles(linkText: string, expectedUrl: string) {
+//     //await this.page.evaluate(() => window.scrollTo(0, 0));
+//     const header = await this.headerComponent.first();
+//     if (!header) {
+//         await this.page.evaluate(() => window.scrollTo(0, 0));
+//     }
+//     const link = await this.page.locator(`a:has-text("${linkText}")`).first();
+//     if(!link) {
+//         console.error(`Link with text "${linkText}" not found!`)
+//         return;
+//     }
+//     await expect(link).toBeVisible();
+//     await link.click();
+//     if (linkText === 'Test' && expectedUrl === '/TEST/test.html'){
+//         await this.page.goBack();
+//     } else {
+//         await expect(this.page).toHaveURL(expectedUrl);
+//     }
+//     await this.page.evaluate(() => window.scrollTo(0, 0));
+// }
 
-    // private async checkHeaderLinksAndTitles(linkText: string, expectedUrl: string) {
-    //     //await this.page.evaluate(() => window.scrollTo(0, 0));
-    //     const header = await this.headerComponent.first();
-    //     if (!header) {
-    //         await this.page.evaluate(() => window.scrollTo(0, 0));
-    //     }
-    //     const link = await this.page.locator(`a:has-text("${linkText}")`).first();
-    //     if(!link) {
-    //         console.error(`Link with text "${linkText}" not found!`)
-    //         return;
-    //     }
-    //     await expect(link).toBeVisible();
-    //     await link.click();
-    //     if (linkText === 'Test' && expectedUrl === '/TEST/test.html'){
-    //         await this.page.goBack();
-    //     } else {
-    //         await expect(this.page).toHaveURL(expectedUrl);
-    //     }
-    //     await this.page.evaluate(() => window.scrollTo(0, 0));
-    // }
-
-    // async checkUserMenuItems(){
+// async checkUserMenuItems(){
 //     await this.userIcon.hover();
 //     const userMenuItems = await this.page.$$('.user__menu .user__item a');
-    
+
 //     for (const menuItem of userMenuItems) {
 //         expect(await menuItem.isVisible()).toBeTruthy();
 //     }
@@ -72,7 +71,7 @@
 // private async checkUserInfoLinksAndTitles(linkText: string, expectedUrl: string) {
 //     await this.userIcon.hover();
 //     const menuItem = await this.page.locator(`.user__menu .user__item a:has-text("${linkText}")`);
-    
+
 //     if (!menuItem) {
 //         console.error(`User menu item with text "${linkText}" not found!`);
 //         return;
@@ -154,7 +153,7 @@
 // test('Check fullscreen resize button', async ({ page }) => {
 //     const fullscreenButton = await page.locator('#video__buts').getByRole('button').nth(1)
 //     await fullscreenButton.first().click();
-    
+
 //     // Очікуємо, що відео відкрилося на повний екран
 //     const isVideoFullscreen = await page.evaluate(() => {
 //         return document.fullscreenElement !== null;
@@ -280,7 +279,7 @@
 
 // test('Check mandatory fields for Try Trial form', async({ page }) => {
 //     const formInputElements = await page.locator('.contact__ul .try__input').all();
-    
+
 //     for (const inputElement of formInputElements) {
 //         const isRequired = await inputElement.getAttribute('required') !== null
 //         expect(isRequired).toBe(true);
@@ -340,7 +339,7 @@
 
 // test('Check news section content', async ({ page }) => {
 //     const newsBlocks = await page.locator('.ban_news .col-lg-4').all();
-    
+
 //     const expectedBlocks = [
 //         {
 //             image: 'images/baner-icon1.svg',
@@ -358,19 +357,19 @@
 //             description: 'Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.'
 //         }
 //     ];
-    
+
 //     for (let i = 0; i < newsBlocks.length; i++) {
 //         const block = newsBlocks[i];
 //         const expectedBlock = expectedBlocks[i];
-        
+
 //         const imageElement = block.locator('img')
 //         const titleElement = block.locator('.content__subheading')
 //         const textElement = block.locator('.content__text')
-        
+
 //         const imageSrc = await imageElement.getAttribute('src');
 //         const titleText = await titleElement.textContent();
 //         const textContent = await textElement.textContent();
-        
+
 //         expect(imageSrc).toContain(expectedBlock.image);
 //         expect(titleText).toContain(expectedBlock.title);
 //         expect(textContent).toContain(expectedBlock.description);
@@ -556,7 +555,7 @@
 
 // test('Check About Clients section content', async ({ page }) => {
 //     const aboutClientsBlocks = await page.locator('.clients .col-lg-4').all();
-    
+
 //     const expectedBlocks = [
 //         {
 //             image: 'images/user_1.svg',
@@ -577,21 +576,21 @@
 //             description: '“Aenean eu leo quam. Pellentesque ornare sem lacinia qua emere wancerid elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Etiasem malesuada magn”'
 //         }
 //     ];
-    
+
 //     for (let i = 0; i < aboutClientsBlocks.length; i++) {
 //         const block = aboutClientsBlocks[i];
 //         const expectedBlock = expectedBlocks[i];
-        
+
 //         const imageElement = block.locator('img');
 //         const nameElement = block.locator('.client__name');
 //         const titleElement = block.locator('.content__rubric');
 //         const textElement = block.locator('.content__text_w');
-        
+
 //         const imageSrc = await imageElement.getAttribute('src');
 //         const nameText = await nameElement.textContent();
 //         const titleText = await titleElement.textContent();
 //         const textContent = await textElement.textContent();
-        
+
 //         expect(imageSrc).toContain(expectedBlock.image);
 //         expect(nameText).toContain(expectedBlock.name);
 //         expect(titleText).toContain(expectedBlock.title);
@@ -700,9 +699,9 @@
 //         { title: 'Terms of Use', url: '#' },
 //         { title: 'Privacy Policy', url: '#' },
 //         { title: 'Get Newsletter', url: '#' },
-        
+
 //     ];
-    
+
 //     for (const link of footerlinksToTest) {
 //         await checkLinkAndUrl(page, link.title, link.url, '.f__ul .f__li a');
 //     }
@@ -942,37 +941,3 @@
 //     const pm = new PageManager(page);
 //     await pm.onBannerNewsComponent().showNewsSection();
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -10,29 +10,25 @@ import { Page, expect } from '@playwright/test';
  * @param {string} locator - The CSS locator for the link.
  */
 export async function checkLinkAndUrl(page: Page, linkText: string, expectedUrl: string, locator: string) {
+  let element;
 
-    let element;
+  // Determine the element based on the locator provided
+  if (locator === '.f__ul .f__li a') {
+    element = page.locator(locator).first();
+  } else {
+    element = page.locator(`${locator}:has-text("${linkText}")`).first();
+  }
 
-    // Determine the element based on the locator provided
-    if (locator === '.f__ul .f__li a') {
-        element = page.locator(locator).first();
-    } else {
-        element = page.locator(`${locator}:has-text("${linkText}")`).first();
-    }
+  await expect(element).toBeVisible();
+  await element.click();
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
 
-    await expect(element).toBeVisible();
-    await element.click();
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  // Special handling for the 'Test' link
+  if (linkText === 'Test' && expectedUrl === '/TEST/test.html') {
+    await page.goBack();
+  } else {
+    await expect(page).toHaveURL(expectedUrl);
+  }
 
-    // Special handling for the 'Test' link
-    if (linkText === 'Test' && expectedUrl === '/TEST/test.html') {
-        await page.goBack();
-    } else {
-        await expect(page).toHaveURL(expectedUrl);
-    }
-    
-    await page.evaluate(() => window.scrollTo(0, 0));
+  await page.evaluate(() => window.scrollTo(0, 0));
 }
-
-
-

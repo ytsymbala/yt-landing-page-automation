@@ -1,29 +1,29 @@
 import { test } from '../page-objects/fixtures';
 
 test.beforeEach(async ({ navigateTo }) => {
-    await navigateTo('header');
-  });
+  await navigateTo('header');
+});
 
 test('Header is displayed @smoke', async ({ pageManager }) => {
-    await pageManager.onHeaderComponent().showHeader();
+  await pageManager.onHeaderComponent().showHeader();
 });
 
 test('Site logo is displayed with correct image', async ({ pageManager }) => {
-    await pageManager.onHeaderComponent().siteLogoIsDisplayed();
+  await pageManager.onHeaderComponent().siteLogoIsDisplayed();
 });
 
 test('Header tabs are present and links work @smoke', async ({ pageManager }) => {
-    await pageManager.onHeaderComponent().headerTabsDisplayedAndLinksWorks();
+  await pageManager.onHeaderComponent().headerTabsDisplayedAndLinksWorks();
 });
 
 test('User logo is displayed with correct image in default state', async ({ pageManager }) => {
-    await pageManager.onHeaderComponent().showDefaultUserLogoWithCorrectImage();
+  await pageManager.onHeaderComponent().showDefaultUserLogoWithCorrectImage();
 });
 
 test('User logo was changed on hover mouse button', async ({ pageManager }) => {
-    await pageManager.onHeaderComponent().showUserLogoOnHover();
+  await pageManager.onHeaderComponent().showUserLogoOnHover();
 });
 
-test('Check the user menu items when navigate on user icon @smoke', async({ pageManager }) => {
-    await pageManager.onHeaderComponent().userInfoItemsDisplayedAndLinksWorks();
+test('Check the user menu items when navigate on user icon @smoke', async ({ pageManager }) => {
+  await pageManager.onHeaderComponent().userInfoItemsDisplayedAndLinksWorks();
 });
